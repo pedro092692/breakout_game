@@ -1,5 +1,6 @@
 from turtle import Screen
 from ball import Ball
+from paddle import Paddle
 from lives import Lives
 import time
 
@@ -16,7 +17,9 @@ class Game:
 
         # game setup
         self.lives = Lives()
+        self.paddle = Paddle(shape='square', color='blue')
         self.ball = Ball(shape='circle', color='red', parent=self)
+
 
     def play_game(self):
         while True:
