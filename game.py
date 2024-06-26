@@ -2,6 +2,7 @@ from turtle import Screen
 from ball import Ball
 from paddle import Paddle
 from lives import Lives
+from wall import Wall
 import time
 
 
@@ -19,6 +20,7 @@ class Game:
         self.lives = Lives()
         self.paddle = Paddle(shape='square', color='blue')
         self.ball = Ball(shape='circle', color='red', parent=self)
+        self.wall = Wall()
 
         # move paddle
         self.screen.listen()
@@ -36,6 +38,7 @@ class Game:
             # move ball
             self.ball.move_ball()
             self.ball.paddle_bounce(paddle=self.paddle)
+
 
             if self.lives.lives < 0:
                 self.lives.game_over()

@@ -22,7 +22,7 @@ class Ball(Turtle):
         self.goto(new_x_cor, new_y_cor)
 
     def ball_bounce(self):
-        if self.ycor() > 280:
+        if self.ycor() > 250:
             self.move_y *= - 1
 
         if self.xcor() > 380 or self.xcor() < -380:
@@ -34,7 +34,6 @@ class Ball(Turtle):
     def paddle_bounce(self, paddle):
         if self.distance(paddle) < 37:
             self.move_y *= - 1
-            print('bounce')
 
     def ball_out(self):
         self.goto(STARTING_POSITION)
