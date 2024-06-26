@@ -1,7 +1,7 @@
 from turtle import Screen
 from ball import Ball
 from paddle import Paddle
-from lives import Lives
+from score_board import ScoreBoard
 from wall import Wall
 import time
 
@@ -17,7 +17,7 @@ class Game:
         self.screen.tracer(0)
 
         # game setup
-        self.lives = Lives()
+        self.lives = ScoreBoard()
         self.paddle = Paddle(shape='square', color='blue')
         self.ball = Ball(shape='circle', color='red', parent=self)
         self.wall = Wall()
@@ -40,7 +40,7 @@ class Game:
             self.ball.paddle_bounce(paddle=self.paddle)
 
             # destroy brick
-            self.wall.destroy_brick(ball=self.ball)
+            self.wall.destroy_brick(ball=self.ball, score=self.lives)
 
             if self.lives.lives < 0:
                 self.lives.game_over()
