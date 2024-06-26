@@ -35,6 +35,7 @@ class Game:
 
             # move ball
             self.ball.move_ball()
+            self.ball.paddle_bounce(paddle=self.paddle)
 
             if self.lives.lives < 0:
                 self.lives.game_over()

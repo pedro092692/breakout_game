@@ -8,7 +8,7 @@ class Paddle(Turtle):
         # Initial setup
         self.shape(shape)
         self.color(color)
-        self.shapesize(stretch_len=6)
+        self.shapesize(1.33, 5)
         self.penup()
         self.goto(0, -280)
 
@@ -21,3 +21,4 @@ class Paddle(Turtle):
         if self.xcor() > -340:
             new_x_cor = self.xcor() - 20
             self.goto(new_x_cor, self.ycor())
+

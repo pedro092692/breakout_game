@@ -31,6 +31,11 @@ class Ball(Turtle):
         if self.ycor() < -280:
             self.ball_out()
 
+    def paddle_bounce(self, paddle):
+        if self.distance(paddle) < 37:
+            self.move_y *= - 1
+            print('bounce')
+
     def ball_out(self):
         self.goto(STARTING_POSITION)
         # reset y to positive move
