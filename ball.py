@@ -1,4 +1,5 @@
 from turtle import Turtle
+STARTING_POSITION = (0, -250)
 
 
 class Ball(Turtle):
@@ -12,6 +13,7 @@ class Ball(Turtle):
         self.move_x = 10
         self.move_y = 10
         self.speed = 0.1
+        self.goto(STARTING_POSITION)
 
     def move_ball(self):
         new_x_cor = self.xcor() + self.move_x
