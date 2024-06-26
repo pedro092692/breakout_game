@@ -20,6 +20,10 @@ class Game:
         self.paddle = Paddle(shape='square', color='blue')
         self.ball = Ball(shape='circle', color='red', parent=self)
 
+        # move paddle
+        self.screen.listen()
+        self.screen.onkeypress(key='Right', fun=self.paddle.move_right)
+        self.screen.onkeypress(key='Left', fun=self.paddle.move_left)
 
     def play_game(self):
         while True:

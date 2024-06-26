@@ -11,3 +11,13 @@ class Paddle(Turtle):
         self.shapesize(stretch_len=6)
         self.penup()
         self.goto(0, -280)
+
+    def move_right(self):
+        if self.xcor() < 340:
+            new_x_cor = self.xcor() + 20
+            self.goto(new_x_cor, self.ycor())
+
+    def move_left(self):
+        if self.xcor() > -340:
+            new_x_cor = self.xcor() - 20
+            self.goto(new_x_cor, self.ycor())
