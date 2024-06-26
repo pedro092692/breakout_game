@@ -3,7 +3,6 @@ import random
 STARTING_POSITION = (0, -250)
 
 
-
 class Ball(Turtle):
     def __init__(self, shape, color):
         super().__init__()

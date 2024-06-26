@@ -1,5 +1,6 @@
 from turtle import Screen
 from ball import Ball
+from lives import Lives
 import time
 
 
@@ -14,7 +15,9 @@ class Game:
         self.screen.tracer(0)
 
         # game setup
+        self.lives = Lives()
         self.ball = Ball(shape='circle', color='red')
+
 
     def play_game(self):
         while True:
