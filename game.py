@@ -2,7 +2,7 @@ from turtle import Screen
 import time
 
 
-class Game():
+class Game:
     def __init__(self, title: str, size):
         # initial setup
         self.screen = Screen()
