@@ -18,4 +18,9 @@ class Lives(Turtle):
     def subtract_lives(self):
         self.clear()
         self.lives -= 1
-        self.write(f'lives: {self.lives}', align=ALIGNMENT, font=FONT)
+        self.write(f'balls: {self.lives}', align=ALIGNMENT, font=FONT)
+
+    def game_over(self):
+        self.clear()
+        self.goto(0, 0)
+        self.write("GAME OVER 😂", align=ALIGNMENT, font=FONT)

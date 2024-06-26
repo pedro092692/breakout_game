@@ -16,8 +16,7 @@ class Game:
 
         # game setup
         self.lives = Lives()
-        self.ball = Ball(shape='circle', color='red')
-
+        self.ball = Ball(shape='circle', color='red', parent=self)
 
     def play_game(self):
         while True:
@@ -29,3 +28,8 @@ class Game:
 
             # move ball
             self.ball.move_ball()
+
+            if self.lives.lives < 0:
+                self.lives.game_over()
+                return
+

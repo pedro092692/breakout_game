@@ -1,13 +1,13 @@
 from turtle import Turtle
-import random
 STARTING_POSITION = (0, -250)
 
 
 class Ball(Turtle):
-    def __init__(self, shape, color):
+    def __init__(self, shape, color, parent):
         super().__init__()
         self.shape(shape)
         self.color(color)
+        self.parent = parent
 
         # initial setup
         self.penup()
@@ -35,4 +35,4 @@ class Ball(Turtle):
         self.goto(STARTING_POSITION)
         # reset y to positive move
         self.move_y *= -1
-
+        self.parent.lives.subtract_lives()
