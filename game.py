@@ -20,4 +20,9 @@ class Game:
         while True:
             time.sleep(self.ball.speed)
             self.screen.update()
-            # self.ball.move_ball()
+
+            # detect collision with walls
+            self.ball.ball_bounce()
+
+            # move ball
+            self.ball.move_ball()

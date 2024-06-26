@@ -1,5 +1,7 @@
 from turtle import Turtle
+import random
 STARTING_POSITION = (0, -250)
+
 
 
 class Ball(Turtle):
@@ -19,3 +21,19 @@ class Ball(Turtle):
         new_x_cor = self.xcor() + self.move_x
         new_y_cor = self.ycor() + self.move_y
         self.goto(new_x_cor, new_y_cor)
+
+    def ball_bounce(self):
+        if self.ycor() > 280:
+            self.move_y *= - 1
+
+        if self.xcor() > 380 or self.xcor() < -380:
+            self.move_x *= -1
+
+        if self.ycor() < -280:
+            self.ball_out()
+
+    def ball_out(self):
+        self.goto(STARTING_POSITION)
+        # reset y to positive move
+        self.move_y *= -1
+
