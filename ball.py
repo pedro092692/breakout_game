@@ -43,3 +43,4 @@ class Ball(Turtle):
         # reset y to positive move
         self.move_y *= -1
         self.parent.lives.subtract_lives()
+        self.speed = 0.1

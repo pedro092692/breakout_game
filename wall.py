@@ -5,7 +5,6 @@ import random
 class Wall(Turtle):
     def __init__(self):
         super().__init__()
-        self.hideturtle()
         self.bricks = []
 
         self.initial_x_post = -380
@@ -42,8 +41,13 @@ class Wall(Turtle):
     def destroy_brick(self, ball):
         for brick in self.bricks:
             if brick.distance(ball) < 25:
+                del self.bricks[0]
+                brick.reset()
+                brick.hideturtle()
                 ball.brick_bounce()
-                ball.speed *= 0.96
+                # ball.speed *= 0.96
+
+                print(len(self.bricks))
 
 
 
