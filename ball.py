@@ -21,7 +21,7 @@ class Ball(Turtle):
         new_y_cor = self.ycor() + self.move_y
         self.goto(new_x_cor, new_y_cor)
 
-    def ball_bounce(self):
+    def ball_bounce(self, paddle):
         if self.ycor() > 250:
             self.move_y *= - 1
 
@@ -29,7 +29,8 @@ class Ball(Turtle):
             self.move_x *= -1
 
         if self.ycor() < -280:
-            self.ball_out()
+            self.ball_out(paddle=paddle)
+            paddle.goto(0, -280)
 
     def brick_bounce(self):
         self.move_y *= - 1
@@ -38,9 +39,10 @@ class Ball(Turtle):
         if self.distance(paddle) < 37:
             self.move_y *= - 1
 
-    def ball_out(self):
+    def ball_out(self, paddle):
         self.goto(STARTING_POSITION)
         # reset y to positive move
         self.move_y *= -1
         self.parent.lives.subtract_lives()
         self.speed = 0.1
+        paddle.speed = 20

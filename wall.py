@@ -38,7 +38,7 @@ class Wall(Turtle):
         brick.goto(self.initial_x_post, self.initial_y_post)
         return brick
 
-    def destroy_brick(self, ball, score):
+    def destroy_brick(self, ball, score, paddle):
         for brick in self.bricks:
             if brick.distance(ball) < 25:
                 # remove brick
@@ -51,6 +51,8 @@ class Wall(Turtle):
                 ball.speed *= 0.98
                 # increase score
                 score.add_score()
+                # increase paddle speed
+                paddle.increase_speed()
 
 
 

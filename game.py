@@ -33,16 +33,20 @@ class Game:
             self.screen.update()
 
             # detect collision with walls
-            self.ball.ball_bounce()
+            self.ball.ball_bounce(paddle=self.paddle)
 
             # move ball
             self.ball.move_ball()
             self.ball.paddle_bounce(paddle=self.paddle)
 
             # destroy brick
-            self.wall.destroy_brick(ball=self.ball, score=self.lives)
+            self.wall.destroy_brick(ball=self.ball, score=self.lives, paddle=self.paddle)
 
             if self.lives.lives < 0:
+                self.lives.game_over()
+                return
+
+            if len(self.wall.bricks) == 0:
                 self.lives.game_over()
                 return
 
