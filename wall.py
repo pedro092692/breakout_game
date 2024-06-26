@@ -39,4 +39,12 @@ class Wall(Turtle):
         brick.goto(self.initial_x_post, self.initial_y_post)
         return brick
 
+    def destroy_brick(self, ball):
+        for brick in self.bricks:
+            if brick.distance(ball) < 25:
+                ball.brick_bounce()
+                ball.speed *= 0.96
+
+
+
 

@@ -39,6 +39,8 @@ class Game:
             self.ball.move_ball()
             self.ball.paddle_bounce(paddle=self.paddle)
 
+            # destroy brick
+            self.wall.destroy_brick(ball=self.ball)
 
             if self.lives.lives < 0:
                 self.lives.game_over()

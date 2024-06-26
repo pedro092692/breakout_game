@@ -31,6 +31,9 @@ class Ball(Turtle):
         if self.ycor() < -280:
             self.ball_out()
 
+    def brick_bounce(self):
+        self.move_y *= - 1
+
     def paddle_bounce(self, paddle):
         if self.distance(paddle) < 37:
             self.move_y *= - 1
